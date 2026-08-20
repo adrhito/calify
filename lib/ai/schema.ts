@@ -40,7 +40,7 @@ function cleanTextField(text: string | null | undefined): string | undefined {
   return cleaned;
 }
 
-export const CalifyEventSchema = z.object({
+export const CalifAIEventSchema = z.object({
   title: z.string().min(1),
   description: z.string().nullable().optional(),
   location: z.string().nullable().optional(),
