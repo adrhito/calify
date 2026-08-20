@@ -4,7 +4,7 @@ import Card from '../ui/Card';
 import CloseButton from '../ui/CloseButton';
 import { useAppState } from '../../hooks/useAppState';
 import { useCaptureMore } from '../../hooks/useCaptureMore';
-import { CalifyEvent } from '../../types/event';
+import { CalifAIEvent } from '../../types/event';
 import { format } from 'date-fns';
 import './EventSelectionView.css';
 
@@ -74,7 +74,7 @@ export default function EventSelectionView() {
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  function formatEventDate(event: CalifyEvent) {
+  function formatEventDate(event: CalifAIEvent) {
     const startDate = new Date(event.startDate);
     const endDate = new Date(event.endDate);
 
@@ -85,7 +85,7 @@ export default function EventSelectionView() {
     return `${format(startDate, 'MMM d, yyyy')} at ${format(startDate, 'h:mm a')} - ${format(endDate, 'h:mm a')}`;
   }
 
-  function formatRecurrence(event: CalifyEvent): string | null {
+  function formatRecurrence(event: CalifAIEvent): string | null {
     if (!event.recurrence) return null;
 
     const { frequency, interval = 1, byDay, count, until } = event.recurrence;
