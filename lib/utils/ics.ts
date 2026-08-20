@@ -5,7 +5,7 @@
 // to someone else in a single artifact. Recipients can import it into
 // Google Calendar (Settings -> Import & export), Outlook, or Apple Calendar.
 
-import { CalifyEvent } from '../../types/event';
+import { CalifAIEvent } from '../../types/event';
 
 function escapeIcsText(text: string): string {
   return text
@@ -30,7 +30,7 @@ function formatDateOnly(dateString: string, addDays: number = 0): string {
   return `${year}${month}${day}`;
 }
 
-function formatRrule(event: CalifyEvent): string | null {
+function formatRrule(event: CalifAIEvent): string | null {
   if (!event.recurrence) return null;
 
   const { frequency, interval, count, until, byDay } = event.recurrence;
@@ -45,7 +45,7 @@ function formatRrule(event: CalifyEvent): string | null {
   return rrule;
 }
 
-export function generateIcsContent(events: CalifyEvent[]): string {
+export function generateIcsContent(events: CalifAIEvent[]): string {
   const dtstamp = formatUtc(new Date().toISOString());
 
   const lines: string[] = [
@@ -90,7 +90,7 @@ export function generateIcsContent(events: CalifyEvent[]): string {
   return lines.join('\r\n') + '\r\n';
 }
 
-export function downloadIcsFile(events: CalifyEvent[], filename: string = 'califai-events.ics'): void {
+export function downloadIcsFile(events: CalifAIEvent[], filename: string = 'califai-events.ics'): void {
   const blob = new Blob([generateIcsContent(events)], { type: 'text/calendar;charset=utf-8' });
   const url = URL.createObjectURL(blob);
 
