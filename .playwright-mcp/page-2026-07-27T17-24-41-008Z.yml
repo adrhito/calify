@@ -1,0 +1,40 @@
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e6]:
+        - generic [ref=e7]: Loading
+        - progressbar [ref=e8]
+      - main [ref=e86]:
+        - generic [ref=e95]:
+          - heading "Welcome" [level=1] [ref=e96]
+          - link "ahito246@gmail.com selected. Switch account" [ref=e98] [cursor=pointer]:
+            - generic [ref=e103]: ahito246@gmail.com
+        - generic [ref=e115]:
+          - generic [ref=e123]:
+            - textbox "Enter your password" [active] [ref=e124]
+            - generic: Enter your password
+          - generic [ref=e131]:
+            - checkbox "Show password" [ref=e135] [cursor=pointer]
+            - generic [ref=e136]: Show password
+        - generic [ref=e140]:
+          - button "Next" [ref=e144]
+          - button "Forgot password?" [ref=e151]
+    - contentinfo [ref=e69]:
+      - combobox "Change language English (United States)" [ref=e73] [cursor=pointer]:
+        - generic: English (United States)
+      - list [ref=e75]:
+        - listitem [ref=e76]:
+          - link "Open Google Account Help Center (external, opens in a new window)" [ref=e77] [cursor=pointer]:
+            - /url: https://support.google.com/accounts?hl=en-US&p=account_iph
+            - text: Help
+        - listitem [ref=e78]:
+          - link "Privacy Policy (external, opens in a new window)" [ref=e79] [cursor=pointer]:
+            - /url: https://accounts.google.com/TOS?loc=US&hl=en-US&privacy=true
+            - text: Privacy
+        - listitem [ref=e80]:
+          - link "Google Terms of Service (external, opens in a new window)" [ref=e81] [cursor=pointer]:
+            - /url: https://accounts.google.com/TOS?loc=US&hl=en-US
+            - text: Terms
+  - iframe [ref=e82]:
+    
+  - generic [ref=e156]: Welcome

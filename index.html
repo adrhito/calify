@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>CalifAI</title>
+  <meta name="application-name" content="CalifAI" />
+  <meta name="description" content="CalifAI is a Chrome extension that uses AI to extract calendar event information from any webpage and adds it directly to your Google Calendar." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://califai.app/" />
+  <meta property="og:title" content="CalifAI" />
+  <meta property="og:site_name" content="CalifAI" />
+  <meta property="og:description" content="CalifAI is a Chrome extension that uses AI to extract calendar event information from any webpage and adds it directly to your Google Calendar." />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="CalifAI" />
+  <meta name="twitter:description" content="Capture calendar events from any webpage and add them to Google Calendar." />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #fff8f0;
+      --surface: #ffffff;
+      --primary: #7D2E3D;
+      --primary-light: #a84455;
+      --accent: #FFDFB0;
+      --text: #1a1a1a;
+      --muted: #555;
+      --border: #e8d5c4;
+      --radius: 6px;
+      --max-w: 760px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* NAV */
+    nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0 1.5rem;
+    }
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--primary);
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.875rem;
+    }
+
+    /* HERO */
+    .hero {
+      background: var(--primary);
+      color: #fff;
+      padding: 4rem 1.5rem 3.5rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4rem;
+    }
+    .hero .tagline {
+      font-size: 1.15rem;
+      opacity: 0.85;
+      margin-bottom: 1.75rem;
+    }
+    .hero-cta {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.65rem 1.5rem;
+      border-radius: var(--radius);
+      transition: opacity 0.15s;
+    }
+    .hero-cta:hover { opacity: 0.85; text-decoration: none; }
+
+    /* MAIN */
+    main {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    .intro {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 3rem;
+      border-left: 3px solid var(--accent);
+      padding-left: 1rem;
+    }
+
+    section { margin-bottom: 2.75rem; }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 1.25rem 0 0.4rem;
+    }
+
+    ol, ul {
+      padding-left: 1.5rem;
+    }
+    li { margin-bottom: 0.4rem; }
+    li strong { color: var(--text); }
+
+    p { margin-bottom: 0.75rem; }
+
+    pre {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      padding: 1rem 1.25rem;
+      border-radius: var(--radius);
+      font-size: 0.85rem;
+      overflow-x: auto;
+      margin: 0.75rem 0;
+    }
+    code {
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.875em;
+      background: #f0e8df;
+      padding: 0.1em 0.35em;
+      border-radius: 3px;
+    }
+    pre code { background: none; padding: 0; font-size: inherit; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin: 0.75rem 0;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      border: 1px solid var(--border);
+    }
+    th { background: var(--accent); color: var(--primary); font-weight: 600; }
+
+    /* FOOTER */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    footer a { color: var(--muted); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <span class="nav-brand">CalifAI</span>
+      <div class="nav-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="https://github.com/adrhito/califAI/issues">Issues</a>
+        <a href="https://github.com/adrhito/califAI">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <h1>CalifAI</h1>
+    <p class="tagline">Screen to Google Calendar — powered by AI</p>
+    <a class="hero-cta" href="https://github.com/adrhito/califAI">View on GitHub</a>
+  </div>
+
+  <main>
+
+    <p class="intro">
+      CalifAI is a Chrome extension that uses AI to extract calendar event information
+      from any webpage and adds it directly to your Google Calendar. Select any event
+      on screen, let AI read it, review the details, and add it to your calendar in seconds.
+    </p>
+
+    <section id="how-it-works">
+      <h2>How It Works</h2>
+      <ol>
+        <li>Click the CalifAI icon in your Chrome toolbar</li>
+        <li>Drag to select the area of the page containing the event</li>
+        <li>AI extracts the title, date, time, location, and description</li>
+        <li>Review and edit the details if needed</li>
+        <li>Click <strong>Add</strong> — it's in your Google Calendar</li>
+      </ol>
+    </section>
+
+    <section id="features">
+      <h2>Features</h2>
+      <ul>
+        <li><strong>AI-powered extraction</strong> — uses Gemini 2.5 Flash (free tier) or OpenAI</li>
+        <li><strong>Multiple events at once</strong> — capture a full schedule and choose which to add</li>
+        <li><strong>Review before adding</strong> — edit any field on a confirmation screen</li>
+        <li><strong>Download .ics</strong> — export to Apple Calendar, Outlook, or any other app</li>
+        <li><strong>Shareable link</strong> — copy a Google Calendar link to send to someone</li>
+        <li><strong>Customizable theme</strong> — adjust colors, time format, date format, and default event color</li>
+      </ul>
+    </section>
+
+    <section id="installation">
+      <h2>Installation</h2>
+
+      <h3>From the Chrome Web Store</h3>
+      <p>Coming soon.</p>
+
+      <h3>From Source</h3>
+      <ol>
+        <li>
+          Clone the repository:
+          <pre><code>git clone https://github.com/adrhito/califAI.git
+cd califAI</code></pre>
+        </li>
+        <li>
+          Install dependencies:
+          <pre><code>npm install</code></pre>
+        </li>
+        <li>
+          Build the extension:
+          <pre><code>npm run build</code></pre>
+        </li>
+        <li>
+          Load in Chrome:
+          <ul style="margin-top: 0.4rem;">
+            <li>Open <code>chrome://extensions/</code></li>
+            <li>Enable <strong>Developer mode</strong></li>
+            <li>Click <strong>Load unpacked</strong></li>
+            <li>Select the <code>.output/chrome-mv3</code> directory</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+
+    <section id="setup">
+      <h2>Setup</h2>
+      <ol>
+        <li>Get a free Gemini API key at <a href="https://aistudio.google.com/app/apikey">aistudio.google.com</a></li>
+        <li>Click the CalifAI icon and enter your key on the setup screen</li>
+        <li>Authorize Google Calendar access when prompted</li>
+      </ol>
+    </section>
+
+    <section id="tech-stack">
+      <h2>Tech Stack</h2>
+      <ul>
+        <li><a href="https://wxt.dev/">WXT</a> — Web Extension Toolkit</li>
+        <li>React 18 + TypeScript</li>
+        <li>Zustand — state management</li>
+        <li>Gemini 2.5 Flash / OpenAI — AI extraction</li>
+        <li>Google Calendar API</li>
+      </ul>
+    </section>
+
+    <section id="scripts">
+      <h2>Scripts</h2>
+      <pre><code>npm run dev      # Development server with HMR
+npm run build    # Production build
+npm run zip      # Create distributable ZIP
+npm run compile  # Type-check without building</code></pre>
+    </section>
+
+    <section id="privacy">
+      <h2>Privacy</h2>
+      <p>
+        The selected screenshot is sent to your chosen AI provider (Gemini or OpenAI)
+        for event extraction only. Your Google Calendar access is handled directly through
+        Google's OAuth flow. No data passes through any CalifAI server — there isn't one.
+      </p>
+      <p><a href="privacy.html">See the full Privacy Policy</a></p>
+    </section>
+
+    <section id="support">
+      <h2>Support</h2>
+      <p>
+        For bugs or feature requests,
+        <a href="https://github.com/adrhito/califAI/issues">open an issue</a>
+        or email <a href="mailto:ahito246@gmail.com">ahito246@gmail.com</a>.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      &copy; 2026 CalifAI &nbsp;&middot;&nbsp;
+      <a href="privacy.html">Privacy Policy</a> &nbsp;&middot;&nbsp;
+      <a href="https://github.com/adrhito/califAI">GitHub</a>
+    </p>
+  </footer>
+
+</body>
+</html>

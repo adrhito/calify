@@ -1,0 +1,149 @@
+- generic [ref=f10e2]:
+  - heading [level=1] [ref=f10e3]:
+    - link "califAI" [ref=f10e4] [cursor=pointer]:
+      - /url: http://califai.app/
+  - heading "CalifAI — Screen to Google Calendar" [level=1] [ref=f10e5]
+  - paragraph [ref=f10e6]:
+    - strong [ref=f10e7]:
+      - link "🌐 Homepage" [ref=f10e8] [cursor=pointer]:
+        - /url: https://adrhito.github.io/califAI/
+    - text: ·
+    - strong [ref=f10e9]:
+      - link "📋 Privacy Policy" [ref=f10e10] [cursor=pointer]:
+        - /url: https://adrhito.github.io/califAI/PRIVACY
+    - text: ·
+    - strong [ref=f10e11]:
+      - link "🐛 Issues" [ref=f10e12] [cursor=pointer]:
+        - /url: https://github.com/adrhito/califAI/issues
+  - separator [ref=f10e13]
+  - paragraph [ref=f10e14]: CalifAI is a Chrome extension that uses AI to extract calendar event information from any webpage and adds it directly to your Google Calendar. Select any event text on screen, let AI read it, review the details, and add it to your calendar in seconds.
+  - heading [level=2] [ref=f10e15]:
+    - text: How It Works
+    - link "Anchor" [ref=f10e16] [cursor=pointer]:
+      - /url: "#how-it-works"
+      - text: 
+  - list [ref=f10e17]:
+    - listitem [ref=f10e18]: Click the CalifAI icon in your Chrome toolbar
+    - listitem [ref=f10e19]: Drag to select the area of the page containing the event
+    - listitem [ref=f10e20]: AI extracts the title, date, time, location, and description
+    - listitem [ref=f10e21]: Review and edit the details if needed
+    - listitem [ref=f10e22]: Click Add — it’s in your Google Calendar
+  - heading [level=2] [ref=f10e23]:
+    - text: Features
+    - link "Anchor" [ref=f10e24] [cursor=pointer]:
+      - /url: "#features"
+      - text: 
+  - list [ref=f10e25]:
+    - listitem [ref=f10e26]:
+      - strong [ref=f10e27]: AI-powered extraction
+      - text: — uses Gemini 2.5 Flash (free tier) or OpenAI
+    - listitem [ref=f10e28]:
+      - strong [ref=f10e29]: Multiple events at once
+      - text: — capture a full schedule and choose which to add
+    - listitem [ref=f10e30]:
+      - strong [ref=f10e31]: Review before adding
+      - text: — edit any field on a confirmation screen
+    - listitem [ref=f10e32]:
+      - strong [ref=f10e33]: Download .ics
+      - text: — export to Apple Calendar, Outlook, or any other app
+    - listitem [ref=f10e34]:
+      - strong [ref=f10e35]: Shareable link
+      - text: — copy a Google Calendar link to send to someone
+    - listitem [ref=f10e36]:
+      - strong [ref=f10e37]: Customizable theme
+      - text: — adjust colors, time format, date format, and default event color
+  - heading [level=2] [ref=f10e38]:
+    - text: Installation
+    - link "Anchor" [ref=f10e39] [cursor=pointer]:
+      - /url: "#installation"
+      - text: 
+  - heading [level=3] [ref=f10e40]:
+    - text: From the Chrome Web Store
+    - link "Anchor" [ref=f10e41] [cursor=pointer]:
+      - /url: "#from-the-chrome-web-store"
+      - text: 
+  - paragraph [ref=f10e42]: Coming soon.
+  - heading [level=3] [ref=f10e43]:
+    - text: From Source
+    - link "Anchor" [ref=f10e44] [cursor=pointer]:
+      - /url: "#from-source"
+      - text: 
+  - list [ref=f10e45]:
+    - listitem [ref=f10e46]:
+      - text: "Clone the repository:"
+      - code [ref=f10e50]: git clone https://github.com/adrhito/califAI.git cd califAI
+    - listitem [ref=f10e51]:
+      - text: "Install dependencies:"
+      - code [ref=f10e55]: npm install
+    - listitem [ref=f10e56]:
+      - text: "Build the extension:"
+      - code [ref=f10e60]: npm run build
+    - listitem [ref=f10e61]:
+      - text: "Load in Chrome:"
+      - list [ref=f10e62]:
+        - listitem [ref=f10e63]:
+          - text: Open
+          - code [ref=f10e64]: chrome://extensions/
+        - listitem [ref=f10e65]:
+          - text: Enable
+          - strong [ref=f10e66]: Developer mode
+        - listitem [ref=f10e67]:
+          - text: Click
+          - strong [ref=f10e68]: Load unpacked
+        - listitem [ref=f10e69]:
+          - text: Select the
+          - code [ref=f10e70]: .output/chrome-mv3
+          - text: directory
+  - heading [level=2] [ref=f10e71]:
+    - text: Setup
+    - link "Anchor" [ref=f10e72] [cursor=pointer]:
+      - /url: "#setup"
+      - text: 
+  - list [ref=f10e73]:
+    - listitem [ref=f10e74]:
+      - text: Get a free Gemini API key at
+      - link "aistudio.google.com" [ref=f10e75] [cursor=pointer]:
+        - /url: https://aistudio.google.com/app/apikey
+    - listitem [ref=f10e76]: Click the CalifAI icon and enter your key on the setup screen
+    - listitem [ref=f10e77]: Authorize Google Calendar access when prompted
+  - heading [level=2] [ref=f10e78]:
+    - text: Tech Stack
+    - link "Anchor" [ref=f10e79] [cursor=pointer]:
+      - /url: "#tech-stack"
+      - text: 
+  - list [ref=f10e80]:
+    - listitem [ref=f10e81]:
+      - link "WXT" [ref=f10e82] [cursor=pointer]:
+        - /url: https://wxt.dev/
+      - text: — Web Extension Toolkit
+    - listitem [ref=f10e83]: React 18 + TypeScript
+    - listitem [ref=f10e84]: Zustand — state management
+    - listitem [ref=f10e85]: Gemini 2.5 Flash / OpenAI — AI extraction
+    - listitem [ref=f10e86]: Google Calendar API
+  - heading [level=2] [ref=f10e87]:
+    - text: Scripts
+    - link "Anchor" [ref=f10e88] [cursor=pointer]:
+      - /url: "#scripts"
+      - text: 
+  - code [ref=f10e92]: "npm run dev # Development server with HMR npm run build # Production build npm run zip # Create distributable ZIP npm run compile # Type-check without building"
+  - heading [level=2] [ref=f10e93]:
+    - text: Privacy
+    - link "Anchor" [ref=f10e94] [cursor=pointer]:
+      - /url: "#privacy"
+      - text: 
+  - paragraph [ref=f10e95]: The selected screenshot is sent to your chosen AI provider (Gemini or OpenAI) for event extraction only. Your Google Calendar access is handled directly through Google’s OAuth flow. No data passes through any CalifAI server — there isn’t one.
+  - paragraph [ref=f10e96]:
+    - text: See the full
+    - link "Privacy Policy" [ref=f10e97] [cursor=pointer]:
+      - /url: https://adrhito.github.io/califAI/PRIVACY
+    - text: .
+  - heading [level=2] [ref=f10e98]:
+    - text: Support
+    - link "Anchor" [ref=f10e99] [cursor=pointer]:
+      - /url: "#support"
+      - text: 
+  - paragraph [ref=f10e100]:
+    - text: For bugs or feature requests,
+    - link "open an issue" [ref=f10e101] [cursor=pointer]:
+      - /url: https://github.com/adrhito/califAI/issues
+    - text: or email ahito246@gmail.com.
