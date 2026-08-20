@@ -1,6 +1,6 @@
 // Generate shareable Google Calendar link for an event
 
-import { CalifyEvent } from '../../types/event';
+import { CalifAIEvent } from '../../types/event';
 
 function formatDateForGoogleCalendar(dateString: string, isAllDay: boolean): string {
   const date = new Date(dateString);
@@ -17,7 +17,7 @@ function formatDateForGoogleCalendar(dateString: string, isAllDay: boolean): str
   }
 }
 
-function formatRecurrenceForGoogleCalendar(event: CalifyEvent): string {
+function formatRecurrenceForGoogleCalendar(event: CalifAIEvent): string {
   if (!event.recurrence) return '';
 
   const { frequency, interval, count, until, byDay } = event.recurrence;
@@ -40,7 +40,7 @@ function formatRecurrenceForGoogleCalendar(event: CalifyEvent): string {
 // only), so the closest single link is the calendar itself, opened at the
 // date range containing the events: day view if they share a day, week view
 // if they fall within 7 days, month view otherwise.
-export function generateCalendarViewLink(events: CalifyEvent[]): string {
+export function generateCalendarViewLink(events: CalifAIEvent[]): string {
   const starts = events
     .map(e => new Date(e.startDate))
     .sort((a, b) => a.getTime() - b.getTime());
@@ -63,7 +63,7 @@ export function generateCalendarViewLink(events: CalifyEvent[]): string {
   return `https://calendar.google.com/calendar/r/month/${year}/${month}`;
 }
 
-export function generateGoogleCalendarLink(event: CalifyEvent): string {
+export function generateGoogleCalendarLink(event: CalifAIEvent): string {
   const baseUrl = 'https://calendar.google.com/calendar/render';
 
   const params = new URLSearchParams({
