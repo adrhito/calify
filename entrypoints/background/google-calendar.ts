@@ -1,6 +1,6 @@
 // Google Calendar API calls
 
-import { CalifyEvent, GoogleCalendar } from '../../types/event';
+import { CalifAIEvent, GoogleCalendar } from '../../types/event';
 import { getAuthToken, removeAuthToken, AuthRequiredError } from './google-auth';
 
 const CALENDAR_API_BASE = 'https://www.googleapis.com/calendar/v3';
@@ -85,7 +85,7 @@ export async function listCalendars(): Promise<GoogleCalendar[]> {
   }));
 }
 
-function convertToGoogleCalendarEvent(event: CalifyEvent): GoogleCalendarEvent {
+function convertToGoogleCalendarEvent(event: CalifAIEvent): GoogleCalendarEvent {
   // Get user's local timezone
   const localTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
@@ -130,7 +130,7 @@ function convertToGoogleCalendarEvent(event: CalifyEvent): GoogleCalendarEvent {
 }
 
 export async function createEvent(
-  event: CalifyEvent,
+  event: CalifAIEvent,
   calendarId: string = 'primary'
 ): Promise<{ eventId: string; eventUrl: string }> {
   const googleEvent = convertToGoogleCalendarEvent(event);
