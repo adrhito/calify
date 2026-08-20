@@ -1,7 +1,7 @@
 import { useAppState } from '../../hooks/useAppState';
 import CloseButton from '../ui/CloseButton';
 import EventForm from '../forms/EventForm';
-import { CalifyEvent } from '../../types/event';
+import { CalifAIEvent } from '../../types/event';
 import './EditView.css';
 
 export default function EditView() {
@@ -21,7 +21,7 @@ export default function EditView() {
     return null;
   }
 
-  function handleSave(updatedEvent: CalifyEvent) {
+  function handleSave(updatedEvent: CalifAIEvent) {
     setCurrentEvent(updatedEvent);
 
     // If we're editing within a multi-event selection, update the events array
