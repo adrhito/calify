@@ -2,14 +2,14 @@
 
 import { create } from 'zustand';
 import { AppState, initialAppState, AppView } from '../types/app-state';
-import { CalifyEvent } from '../types/event';
+import { CalifAIEvent } from '../types/event';
 import { getAppState, saveAppState } from '../lib/storage/session';
 
 interface AppStateStore extends AppState {
   // Actions
   setView: (view: AppView) => void;
-  setEvents: (events: CalifyEvent[]) => void;
-  setCurrentEvent: (event: CalifyEvent | null) => void;
+  setEvents: (events: CalifAIEvent[]) => void;
+  setCurrentEvent: (event: CalifAIEvent | null) => void;
   setSelectedEventIndex: (index: number | null) => void;
   setSelectedEventIndices: (indices: number[]) => void;
   setEditingEventIndex: (index: number | null) => void;
