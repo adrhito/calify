@@ -1,14 +1,14 @@
 // Typed Chrome messaging protocol
 
-import { CalifyEvent, GoogleCalendar } from '../../types/event';
+import { CalifAIEvent, GoogleCalendar } from '../../types/event';
 import { ExtractionResult } from '../ai/extraction';
 
 // Message types from popup to service worker
 export type BackgroundMessage =
   | { type: 'CAPTURE_AND_EXTRACT'; useSelection?: boolean }
   | { type: 'GET_CALENDARS' }
-  | { type: 'CREATE_EVENT'; event: CalifyEvent; calendarId: string }
-  | { type: 'CREATE_EVENTS'; events: CalifyEvent[]; calendarId: string }
+  | { type: 'CREATE_EVENT'; event: CalifAIEvent; calendarId: string }
+  | { type: 'CREATE_EVENTS'; events: CalifAIEvent[]; calendarId: string }
   | { type: 'AUTHORIZE_GOOGLE' }
   | { type: 'CHECK_GOOGLE_AUTH' }
   | { type: 'GET_USER_INFO' }
