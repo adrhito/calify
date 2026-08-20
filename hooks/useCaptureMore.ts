@@ -9,7 +9,7 @@
 import React from 'react';
 import { useAppState } from './useAppState';
 import { sendToBackground } from '../lib/messaging/send';
-import { CalifyEvent } from '../types/event';
+import { CalifAIEvent } from '../types/event';
 import {
   CAPTURE_SESSION_KEYS,
   PROCESSING_TIMEOUT_MESSAGE,
@@ -25,7 +25,7 @@ export function useCaptureMore() {
   // Capture More outcomes never go to the error view - that would strand
   // the user away from the events they already have. Always return to the
   // event list with an informational notice instead
-  function mergeNewEvents(newEvents: CalifyEvent[]) {
+  function mergeNewEvents(newEvents: CalifAIEvent[]) {
     const existing = useAppState.getState().events;
 
     if (newEvents.length === 0) {
@@ -38,7 +38,7 @@ export function useCaptureMore() {
     // events are accepted, so duplicates WITHIN the captured batch are
     // filtered too (the AI sometimes extracts the same event twice)
     const seenKeys = new Set(existing.map(e => `${e.title}-${e.startDate}`));
-    const uniqueNewEvents: CalifyEvent[] = [];
+    const uniqueNewEvents: CalifAIEvent[] = [];
     for (const event of newEvents) {
       const key = `${event.title}-${event.startDate}`;
       if (!seenKeys.has(key)) {
@@ -65,7 +65,7 @@ export function useCaptureMore() {
     setView('event-selection');
   }
 
-  function handleCaptureResult(captureError?: string, captureResult?: { events?: CalifyEvent[] }) {
+  function handleCaptureResult(captureError?: string, captureResult?: { events?: CalifAIEvent[] }) {
     if (captureError) {
       setError({ message: captureError, retryable: true });
       setView('error');
