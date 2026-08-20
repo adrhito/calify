@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Privacy Policy — CalifAI</title>
+  <meta name="application-name" content="CalifAI" />
+  <meta name="description" content="CalifAI privacy policy — how the extension handles your data." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://califai.app/privacy.html" />
+  <meta property="og:title" content="Privacy Policy — CalifAI" />
+  <meta property="og:site_name" content="CalifAI" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #fff8f0;
+      --surface: #ffffff;
+      --primary: #7D2E3D;
+      --accent: #FFDFB0;
+      --text: #1a1a1a;
+      --muted: #555;
+      --border: #e8d5c4;
+      --radius: 6px;
+      --max-w: 760px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0 1.5rem;
+    }
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+    .nav-brand { font-weight: 700; font-size: 1.15rem; color: var(--primary); }
+    .nav-links { display: flex; gap: 1.5rem; font-size: 0.875rem; }
+
+    main {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    h1 { font-size: 1.75rem; font-weight: 800; color: var(--primary); margin-bottom: 0.4rem; }
+    .updated { font-size: 0.85rem; color: var(--muted); margin-bottom: 2.5rem; }
+
+    hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 2rem 0 0.75rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    h3 { font-size: 1rem; font-weight: 600; margin: 1.25rem 0 0.4rem; }
+
+    p { margin-bottom: 0.75rem; }
+    ul, ol { padding-left: 1.5rem; margin-bottom: 0.75rem; }
+    li { margin-bottom: 0.35rem; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin: 0.75rem 0;
+    }
+    th, td { text-align: left; padding: 0.5rem 0.75rem; border: 1px solid var(--border); }
+    th { background: var(--accent); color: var(--primary); font-weight: 600; }
+
+    code {
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.875em;
+      background: #f0e8df;
+      padding: 0.1em 0.35em;
+      border-radius: 3px;
+    }
+
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    footer a { color: var(--muted); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">CalifAI</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="https://github.com/adrhito/califAI/issues">Issues</a>
+        <a href="https://github.com/adrhito/califAI">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <h1>Privacy Policy — CalifAI</h1>
+    <p class="updated">Last updated: June 2026</p>
+
+    <p>
+      This Privacy Policy describes how CalifAI ("the Extension", "we", "us") handles your
+      information. By using CalifAI, you agree to the practices described below.
+    </p>
+
+    <hr />
+
+    <h2>Who We Are</h2>
+    <p>
+      CalifAI is a Chrome browser extension developed and maintained by Adrian Hito.
+      Contact: <a href="mailto:ahito246@gmail.com">ahito246@gmail.com</a>
+    </p>
+
+    <hr />
+
+    <h2>What Data CalifAI Collects</h2>
+
+    <h3>1. Website Content (Screenshot Data)</h3>
+    <p>
+      When you use CalifAI to capture an event, a screenshot of the area you selected on the
+      current webpage is created. This screenshot is sent to your chosen AI provider (Google
+      Gemini or OpenAI) to extract event details such as title, date, time, and location.
+    </p>
+    <ul>
+      <li>The screenshot contains only the portion of the page you explicitly dragged to select</li>
+      <li>It is sent directly from your browser to the AI provider's API</li>
+      <li>It is not stored on any CalifAI server (there is none)</li>
+      <li>
+        It is subject to the privacy policy of your chosen AI provider:
+        <ul>
+          <li>Google Gemini: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></li>
+          <li>OpenAI: <a href="https://openai.com/privacy">openai.com/privacy</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>2. API Keys</h3>
+    <p>
+      Your AI provider API key (Gemini or OpenAI) is stored locally in Chrome's
+      <code>chrome.storage.local</code> on your own device. It is never transmitted to any
+      CalifAI server or any party other than the AI provider when making an extraction request.
+    </p>
+
+    <h3>3. User Preferences and Settings</h3>
+    <p>The following settings are stored locally on your device in <code>chrome.storage.local</code>:</p>
+    <ul>
+      <li>AI provider selection (Gemini or OpenAI)</li>
+      <li>Color theme preferences (primary and secondary colors)</li>
+      <li>Time format preference (12-hour or 24-hour)</li>
+      <li>Date format preference (US or ISO)</li>
+      <li>Default event color</li>
+      <li>Default reminder settings</li>
+    </ul>
+    <p>None of these are transmitted externally.</p>
+
+    <h3>4. Session State</h3>
+    <p>
+      Temporary session data (current view, captured events, selected events) is stored in
+      <code>chrome.storage.session</code> and is automatically cleared when you close the browser.
+      It never leaves your device.
+    </p>
+
+    <h3>5. Google Account Access</h3>
+    <p>
+      When you connect your Google account to add events to Google Calendar, CalifAI uses
+      Google's OAuth 2.0 flow via <code>chrome.identity</code>. The resulting access token is
+      stored locally in <code>chrome.storage.local</code> and is used only to call the Google
+      Calendar API to create events. CalifAI does not access, read, or store any calendar data
+      beyond what is needed to create a new event.
+    </p>
+
+    <h3>6. Usage Analytics (Future)</h3>
+    <p>
+      CalifAI may in future versions collect anonymized, aggregated usage data (for example:
+      how often captures are performed, which AI provider is used) to improve the product.
+      If and when this is implemented, this policy will be updated and users will be notified.
+      No such data is collected in the current version.
+    </p>
+
+    <hr />
+
+    <h2>What Data CalifAI Does Not Collect</h2>
+    <ul>
+      <li>Your name, email address, or any personally identifiable information</li>
+      <li>Your browsing history or the URLs of pages you visit</li>
+      <li>The full contents of any webpage — only the screenshot of the area you select</li>
+      <li>Payment or financial information</li>
+      <li>Health information</li>
+      <li>Any data from pages where you do not actively trigger a capture</li>
+    </ul>
+
+    <hr />
+
+    <h2>How Data Is Used</h2>
+    <table>
+      <thead>
+        <tr><th>Data</th><th>Purpose</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Selected screenshot</td><td>Sent to AI provider to extract event details</td></tr>
+        <tr><td>API key</td><td>Authenticate requests to the AI provider API</td></tr>
+        <tr><td>Google OAuth token</td><td>Create events in Google Calendar on your behalf</td></tr>
+        <tr><td>Settings</td><td>Personalize the extension UI and defaults</td></tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <h2>Data Sharing and Third Parties</h2>
+    <p>CalifAI does not sell, rent, or trade your data.</p>
+    <p>The only third parties that receive any data are:</p>
+    <ul>
+      <li><strong>Google Gemini API</strong> — receives the selected screenshot if Gemini is your chosen provider</li>
+      <li><strong>OpenAI API</strong> — receives the selected screenshot if OpenAI is your chosen provider</li>
+      <li><strong>Google Calendar API</strong> — receives new event details (title, date, time, location) to create calendar entries</li>
+    </ul>
+    <p>No other parties receive any data.</p>
+
+    <hr />
+
+    <h2>Data Retention</h2>
+    <ul>
+      <li>Screenshot data: not retained by CalifAI. Retention by the AI provider is governed by their own policies.</li>
+      <li>API keys and settings: retained locally on your device until you uninstall the extension or clear Chrome's extension storage.</li>
+      <li>Session state: cleared automatically when the browser is closed.</li>
+      <li>Google OAuth token: retained locally until it expires or you disconnect your Google account from the extension.</li>
+    </ul>
+
+    <hr />
+
+    <h2>Your Rights and Choices</h2>
+    <ul>
+      <li><strong>Remove your API key</strong>: open CalifAI Settings and clear the API key field at any time</li>
+      <li><strong>Disconnect Google Calendar</strong>: revoke CalifAI's access at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a></li>
+      <li><strong>Delete all local data</strong>: uninstalling the extension removes all locally stored data</li>
+      <li><strong>Switch AI providers</strong>: you can switch between Gemini and OpenAI at any time in Settings</li>
+    </ul>
+
+    <hr />
+
+    <h2>Children's Privacy</h2>
+    <p>
+      CalifAI is not directed at children under the age of 13. We do not knowingly collect
+      any information from children.
+    </p>
+
+    <hr />
+
+    <h2>Changes to This Policy</h2>
+    <p>
+      If this policy changes materially, the "Last updated" date at the top will be revised.
+      Continued use of the extension after changes constitutes acceptance of the updated policy.
+    </p>
+
+    <hr />
+
+    <h2>Contact</h2>
+    <p>
+      For privacy questions or concerns, contact:<br />
+      <strong>Adrian Hito</strong><br />
+      <a href="mailto:ahito246@gmail.com">ahito246@gmail.com</a>
+    </p>
+
+  </main>
+
+  <footer>
+    <p>
+      &copy; 2026 CalifAI &nbsp;&middot;&nbsp;
+      <a href="index.html">Home</a> &nbsp;&middot;&nbsp;
+      <a href="https://github.com/adrhito/califAI">GitHub</a>
+    </p>
+  </footer>
+
+</body>
+</html>
