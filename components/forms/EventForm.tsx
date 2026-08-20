@@ -7,13 +7,13 @@ import TimePicker from '../ui/TimePicker';
 import TextArea from '../ui/TextArea';
 import Button from '../ui/Button';
 import RecurrenceEditor from './RecurrenceEditor';
-import { CalifyEvent, RecurrenceRule } from '../../types/event';
+import { CalifAIEvent, RecurrenceRule } from '../../types/event';
 import { formatDateForInput, formatTimeForInput, combineDateAndTime } from '../../lib/utils/date';
 import './EventForm.css';
 
 interface EventFormProps {
-  event: CalifyEvent;
-  onSave: (event: CalifyEvent) => void;
+  event: CalifAIEvent;
+  onSave: (event: CalifAIEvent) => void;
   onCancel: () => void;
 }
 
@@ -94,7 +94,7 @@ export default function EventForm({ event, onSave, onCancel }: EventFormProps) {
       return;
     }
 
-    const updatedEvent: CalifyEvent = {
+    const updatedEvent: CalifAIEvent = {
       ...event,
       title: formData.title,
       description: formData.description || undefined,
