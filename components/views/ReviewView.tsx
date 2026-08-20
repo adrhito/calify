@@ -10,7 +10,7 @@ import { sendToBackground } from '../../lib/messaging/send';
 import { format } from 'date-fns';
 import { formatDateForDisplay, formatTimeForDisplay } from '../../lib/utils/date';
 import { getSettings } from '../../lib/storage/settings';
-import type { CalifyEvent } from '../../types/event';
+import type { CalifAIEvent } from '../../types/event';
 import './ReviewView.css';
 
 export default function ReviewView() {
@@ -148,7 +148,7 @@ export default function ReviewView() {
     goBack();
   }
 
-  function formatRecurrence(event: CalifyEvent): string {
+  function formatRecurrence(event: CalifAIEvent): string {
     if (!event.recurrence) return '';
 
     const { frequency, interval = 1, byDay, count, until } = event.recurrence;
