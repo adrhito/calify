@@ -1,4 +1,4 @@
-# Chrome Web Store Submission Guide for Calify
+# Chrome Web Store Submission Guide for CalifAI
 
 ## Prerequisites
 
@@ -14,7 +14,7 @@
 
 ### Basic Information
 
-**Extension Name**: Calify
+**Extension Name**: CalifAI
 
 **Short Description** (132 characters max):
 ```
@@ -23,11 +23,11 @@ AI-powered tool to capture calendar events from any webpage and add them to Goog
 
 **Detailed Description**:
 ```
-Calify makes it effortless to add events to your Google Calendar from any webpage.
+CalifAI makes it effortless to add events to your Google Calendar from any webpage.
 
 HOW IT WORKS
 1. Navigate to any webpage with event information (email, event page, social media)
-2. Click the Calify extension icon
+2. Click the CalifAI extension icon
 3. Click "Capture Event"
 4. AI extracts event details from the visible page
 5. Review and edit the information
@@ -57,10 +57,10 @@ PRIVACY & SECURITY
 • Open source - audit the code yourself
 
 SETUP REQUIRED
-You'll need a free Google Gemini API key to use Calify:
+You'll need a free Google Gemini API key to use CalifAI:
 1. Visit Google AI Studio (https://aistudio.google.com/app/apikey)
 2. Create a free API key
-3. Enter it in Calify's settings
+3. Enter it in CalifAI's settings
 
 Perfect for:
 • Professionals managing busy calendars
@@ -140,7 +140,7 @@ Take screenshots of your extension in use:
 ```bash
 # Load the extension in Chrome
 # Navigate to chrome://extensions/
-# Reload Calify
+# Reload CalifAI
 # Open the extension and take screenshots at 1280x800 resolution
 ```
 
@@ -225,7 +225,7 @@ Common reasons and fixes:
 
 ## OAuth Verification (Required for Google Calendar Access)
 
-Since Calify uses Google Calendar API with sensitive scopes, you need to verify your OAuth consent screen:
+Since CalifAI uses Google Calendar API with sensitive scopes, you need to verify your OAuth consent screen:
 
 1. **Go to Google Cloud Console**
    - Visit [Google Cloud Console](https://console.cloud.google.com/)
@@ -234,7 +234,7 @@ Since Calify uses Google Calendar API with sensitive scopes, you need to verify 
 2. **Configure OAuth Consent Screen**
    - Navigate to "APIs & Services" > "OAuth consent screen"
    - Add required information:
-     - App name: Calify
+     - App name: CalifAI
      - User support email: your email
      - Developer contact: your email
      - Privacy policy URL: same as in Chrome Web Store
@@ -275,7 +275,7 @@ Add installation from Chrome Web Store:
 ## Installation
 
 ### From Chrome Web Store
-[Install Calify](https://chrome.google.com/webstore/detail/your-extension-id)
+[Install CalifAI](https://chrome.google.com/webstore/detail/your-extension-id)
 
 ### From Source
 ...existing instructions...
