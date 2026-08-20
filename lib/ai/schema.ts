@@ -58,7 +58,7 @@ export const CalifAIEventSchema = z.object({
 }));
 
 export const AIExtractionResponseSchema = z.object({
-  events: z.array(CalifyEventSchema),
+  events: z.array(CalifAIEventSchema),
   reasoning: z.string().optional()
 });
 
