@@ -15,7 +15,7 @@ export interface Reminder {
   minutes: number;
 }
 
-export interface CalifyEvent {
+export interface CalifAIEvent {
   id?: string;
   title: string;
   description?: string;
