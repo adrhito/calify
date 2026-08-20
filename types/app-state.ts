@@ -1,6 +1,6 @@
 // App state types for popup views
 
-import { CalifyEvent } from './event';
+import { CalifAIEvent } from './event';
 
 export type AppView =
   | 'setup'           // First launch - need API key + Google auth
@@ -16,11 +16,11 @@ export type AppView =
 export interface AppState {
   view: AppView;
   viewHistory: AppView[]; // Navigation history for back button
-  events: CalifyEvent[];
+  events: CalifAIEvent[];
   selectedEventIndex: number | null;
   selectedEventIndices: number[]; // For multi-select
   editingEventIndex: number | null; // Which event is being edited (for multi-select)
-  currentEvent: CalifyEvent | null;
+  currentEvent: CalifAIEvent | null;
   error: {
     message: string;
     code?: string;
